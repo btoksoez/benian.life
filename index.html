@@ -6,6 +6,11 @@
     <title>Benian.life</title>
     <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
+    <meta property="og:title" content="Benian.life">
+    <meta property="og:description" content="A little bit about me">
+    <meta property="og:image" content="./images/preview.png">
+    <meta property="og:url" content="https://benian.life">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
     <nav>
@@ -62,8 +67,14 @@
         
         <section id="projects">
             <h2>Projects</h2>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="coding">Coding</button>
+                <button class="filter-btn" data-filter="entrepreneurship">Entrepreneurship</button>
+                <button class="filter-btn" data-filter="retreats">Retreats</button>
+            </div>
             <div class="project-grid">
-                <div class="project-item">
+                <div class="project-item" data-category="coding">
                     <div class="project-preview">
                         <img src="path/to/tesco-preview.jpg" alt="Tesco Groceries Preview">
                     </div>
@@ -71,7 +82,7 @@
                         <h3>Tesco Groceries</h3>
                     </div>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="entrepreneurship">
                     <div class="project-preview">
                         <img src="path/to/habito-preview.jpg" alt="Habito Preview">
                     </div>
@@ -79,7 +90,7 @@
                         <h3>Habito</h3>
                     </div>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="coding">
                     <div class="project-preview">
                         <img src="path/to/shell-energy-preview.jpg" alt="Shell Energy Preview">
                     </div>
@@ -87,7 +98,7 @@
                         <h3>Shell Energy</h3>
                     </div>
                 </div>
-                <div class="project-item">
+                <div class="project-item" data-category="coding">
                     <div class="project-preview">
                         <img src="path/to/other-project-preview.jpg" alt="Other Project Preview">
                     </div>
@@ -95,42 +106,71 @@
                         <h3>Other Project</h3>
                     </div>
                 </div>
+                <div class="project-item" data-category="retreats">
+                    <div class="project-preview">
+                        <img src="path/to/other-project-preview.jpg" alt="Other Project Preview">
+                    </div>
+                    <div class="project-info">
+                        <h3>Retreat Project</h3>
+                    </div>
+                </div>
             </div>
         </section>
         
         <section id="blog">
             <h2>Blog</h2>
-            <div class="animation-placeholder"></div>
-            <!-- Add your blog posts or links here -->
-            <div class="blog-button-container" style="text-align: right;">
-                <a href="blog.html" class="btn">View All</a>
+            <div class="blog-grid" id="blogGrid">
+                <article class="blog-post large">
+                    <img src="./images/art.png" alt="Blog post 1">
+                    <h3>Blog Post Title 1</h3>
+                    <p class="date">June 1, 2023</p>
+                </article>
+                <article class="blog-post">
+                    <img src="./images/art.png" alt="Blog post 2">
+                    <h3>Blog Post Title 2</h3>
+                    <p class="date">May 15, 2023</p>
+                </article>
+                <article class="blog-post">
+                    <img src="./images/art.png" alt="Blog post 3">
+                    <h3>Blog Post Title 3</h3>
+                    <p class="date">May 1, 2023</p>
+                </article>
+                <article class="blog-post tall hidden">
+                    <img src="./images/art.png" alt="Blog post 4">
+                    <h3>Blog Post Title 4</h3>
+                    <p class="date">April 20, 2023</p>
+                </article>
+                <article class="blog-post hidden">
+                    <img src="./images/art.png" alt="Blog post 5">
+                    <h3>Blog Post Title 5</h3>
+                    <p class="date">April 10, 2023</p>
+                </article>
+                <article class="blog-post large hidden">
+                    <img src="./images/art.png" alt="Blog post 6">
+                    <h3>Blog Post Title 6</h3>
+                    <p class="date">March 25, 2023</p>
+                </article>
+                <article class="blog-post hidden">
+                    <img src="./images/art.png" alt="Blog post 7">
+                    <h3>Blog Post Title 7</h3>
+                    <p class="date">March 15, 2023</p>
+                </article>
+                <article class="blog-post tall hidden">
+                    <img src="./images/art.png" alt="Blog post 8">
+                    <h3>Blog Post Title 8</h3>
+                    <p class="date">March 1, 2023</p>
+                </article>
+                <article class="blog-post hidden">
+                    <img src="./images/art.png" alt="Blog post 9">
+                    <h3>Blog Post Title 9</h3>
+                    <p class="date">February 20, 2023</p>
+                </article>
             </div>
+            <button id="viewAllBtn">View All</button>
         </section>
     </main>
     
-    <footer>
-        <div class="footer-content">
-            <div class="contact">
-                <h3>Contact</h3>
-                <p>Email: btoksoez@gmail.com</p>
-            </div>
-            <div class="social-links">
-                <h3>Connect</h3>
-                <a href="https://linkedin.com/in/benian" target="_blank">LinkedIn</a>
-                <a href="instagram.com/3enian" target="_blank">Email</a>
-                <a href="https://github.com/btoksoez" target="_blank">GitHub</a>
-            </div>
-            <div class="quick-links">
-                <h3>Quick Links</h3>
-                <a href="#experiences">Experiences</a>
-                <a href="#projects">Projects</a>
-                <a href="#blog">Blog</a>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>2024 Benian. All rights reserved.</p>
-        </div>
-    </footer>
+
 
     <script src="script.js"></script>
 </body>

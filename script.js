@@ -60,3 +60,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectItems = document.querySelectorAll('.project-item');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const filter = button.dataset.filter;
+            
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            projectItems.forEach(item => {
+                if (filter === 'all' || item.dataset.category === filter) {
+                    item.classList.remove('hidden');
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const viewAllBtn = document.getElementById('viewAllBtn');
+    const blogGrid = document.getElementById('blogGrid');
+    const hiddenPosts = blogGrid.querySelectorAll('.blog-post.hidden');
+
+    viewAllBtn.addEventListener('click', function() {
+        hiddenPosts.forEach(post => post.classList.toggle('hidden'));
+        
+        if (viewAllBtn.textContent === 'View All') {
+            viewAllBtn.textContent = 'Show Less';
+        } else {
+            viewAllBtn.textContent = 'View All';
+        }
+    });
+});
