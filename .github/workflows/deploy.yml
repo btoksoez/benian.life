@@ -21,7 +21,7 @@ jobs:
     - name: Sync files to server
       run: |
         rsync -avz --delete \
-        -e "ssh -o StrictHostKeyChecking=no" \
+        -e "ssh -i ~/.ssh/id_rsa_server -o StrictHostKeyChecking=no" \
         ./ \
         ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/kunden/homepages/9/d1015355814/htdocs/home/benian/public
       env:
