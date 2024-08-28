@@ -1,0 +1,29 @@
+name: Deploy to FTP Server
+
+on:
+  push:
+    branches:
+      - main  # Trigger deployment on push to main branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.7.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Sync files to server
+      run: |
+        rsync -avz --delete \
+        -e "ssh -o StrictHostKeyChecking=no" \
+        ./ \
+        ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/kunden/homepages/9/d1015355814/htdocs/home/benian/public
+      env:
+        SSH_USERNAME: ${{ secrets.SSH_USERNAME }}
+        SSH_HOST: ${{ secrets.SSH_HOST }}

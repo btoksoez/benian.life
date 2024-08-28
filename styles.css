@@ -152,16 +152,18 @@ footer {
 .footer-content {
     display: flex;
     justify-content: space-around;
+    align-items: flex-start;
     flex-wrap: wrap;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 20px;
 }
 
 .footer-content > div {
     flex: 1;
-    margin: 10px;
     min-width: 200px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
 .footer-content h3 {
