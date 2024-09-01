@@ -1,11 +1,15 @@
 #!/usr/bin/env python3
 from flask import Flask, jsonify
 import requests
+import logging
 
 app = Flask(__name__)
 
+logging.basicConfig(filename='app.log', level=logging.DEBUG)
+
 @app.route('/api/github/repos')
 def github_repos():
+    return jsonify({"message": "GitHub repos endpoint accessed"})
     username = 'btoksoez'
     url = f'https://api.github.com/users/{username}/repos'
     
