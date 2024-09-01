@@ -95,22 +95,38 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Function to fetch and display GitHub repos
 function fetchGitHubRepos() {
-    fetch('/cgi-bin/info.py/api/github/repos')
-        .then(response => response.json())
+    fetch('github_repos.php')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
         .then(repos => {
             const reposContainer = document.getElementById('repos-container');
-            repos.forEach(repo => {
-                const repoElement = document.createElement('div');
-                repoElement.className = 'repo-item';
-                repoElement.innerHTML = `
-                    <h3><a href="${repo.url}" target="_blank">${repo.name}</a></h3>
-                    <p>${repo.description || 'No description'}</p>
-                    <p>Stars: ${repo.stars}, Language: ${repo.language || 'Not specified'}</p>
-                `;
-                reposContainer.appendChild(repoElement);
-            });
+            if (reposContainer) {
+                reposContainer.innerHTML = ''; // Clear existing content
+                repos.forEach(repo => {
+                    const repoElement = document.createElement('div');
+                    repoElement.className = 'repo-item';
+                    repoElement.innerHTML = `
+                        <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+                        <p>${repo.description || 'No description'}</p>
+                        <p>Stars: ${repo.stargazers_count}, Language: ${repo.language || 'Not specified'}</p>
+                    `;
+                    reposContainer.appendChild(repoElement);
+                });
+            } else {
+                console.error('repos-container element not found');
+            }
         })
-        .catch(error => console.error('Error fetching GitHub repos:', error));
+        .catch(error => {
+            console.error('Error fetching GitHub repos:', error);
+            const reposContainer = document.getElementById('repos-container');
+            if (reposContainer) {
+                reposContainer.innerHTML = '<p>Error loading repositories. Please try again later.</p>';
+            }
+        });
 }
 
 // Call the function when the page loads
