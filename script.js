@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Function to fetch and display GitHub repos
 function fetchGitHubRepos() {
-    fetch('info.php')
+    fetch('github.php')
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
