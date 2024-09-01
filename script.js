@@ -43,20 +43,14 @@ window.addEventListener('resize', animateTimeline);
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-
         const targetId = this.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
+        const navbarHeight = document.querySelector('nav').offsetHeight;
 
         if (targetElement) {
-            // Calculate the distance to scroll
-            const navbarHeight = document.querySelector('nav').offsetHeight;
-            const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
-
-            // Perform the smooth scroll
-            window.scrollTo({
-                top: targetPosition,
-                behavior: 'smooth'
-            });
+            const yOffset = -navbarHeight;
+            const y = targetElement.getBoundingClientRect().top + window.pageYOffset + yOffset;
+            window.scrollTo({top: y, behavior: 'smooth'});
         }
     });
 });
@@ -84,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-    const viewAllBtn = document.getElementById('viewAllBtn');
+    const viewAllBtn = document.querySelector('.viewAllBtn');
     const blogGrid = document.getElementById('blogGrid');
     const hiddenPosts = blogGrid.querySelectorAll('.blog-post.hidden');
 

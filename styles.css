@@ -307,6 +307,7 @@ footer {
     gap: 2rem;
     justify-content: center;
     margin: 0 auto;
+    max-width: 1200px;
 }
 
 .project-item {
@@ -315,6 +316,18 @@ footer {
     width: 100%;
     position: relative;
     overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 0 20px;
+    }
+
+    .project-item {
+        max-width: 100%;
+    }
 }
 
 .project-preview {
@@ -377,6 +390,7 @@ footer {
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 100px;
+    color: var(--dark-brown); /* Add this line */
 }
 
 .filter-btn.active {
@@ -458,7 +472,7 @@ footer {
     display: none;
 }
 
-#viewAllBtn {
+.viewAllBtn {
     display: block;
     margin: 20px auto;
     padding: 10px 20px;
@@ -470,6 +484,43 @@ footer {
     transition: background-color 0.3s ease;
 }
 
-#viewAllBtn:hover {
+.viewAllBtn:hover {
     background-color: var(--light-brown);
+}
+
+@media (max-width: 768px) {
+    .view-all-btn {
+        background-color: var(--dark-brown);
+        color: var(--beige-white);
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 5rem; /* Reduce font size on smaller screens */
+        max-width: 90%; /* Limit width to 90% of the container */
+        margin: 0 auto; /* Center the text */
+        word-wrap: break-word; /* Allow long words to break and wrap */
+    }
+
+    header .subtitle {
+        font-size: 1rem; /* Reduce subtitle font size */
+        max-width: 90%; /* Limit width to 90% of the container */
+        margin: 10px auto; /* Center the text and add some vertical margin */
+    }
+
+    .scroll-down {
+        bottom: 20px; /* Adjust position of scroll down arrow */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 4rem; /* Further reduce font size on very small screens */
+        max-width: 90%; /* Limit width to 90% of the container */
+    }
+
+    header .subtitle {
+        font-size: 1.1rem; /* Further reduce subtitle font size */
+    }
 }
