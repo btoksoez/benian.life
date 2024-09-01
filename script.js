@@ -131,3 +131,26 @@ function fetchGitHubRepos() {
 
 // Call the function when the page loads
 document.addEventListener('DOMContentLoaded', fetchGitHubRepos);
+
+document.addEventListener('DOMContentLoaded', function() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    timelineItems.forEach(item => {
+        const header = item.querySelector('h4');
+        const details = item.querySelector('.experience-details');
+
+        // Initially hide the details
+        details.style.display = 'none';
+
+        header.addEventListener('click', () => {
+            // Toggle the details visibility
+            if (details.style.display === 'none') {
+                details.style.display = 'block';
+                header.classList.add('active');
+            } else {
+                details.style.display = 'none';
+                header.classList.remove('active');
+            }
+        });
+    });
+});
