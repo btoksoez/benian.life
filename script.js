@@ -92,3 +92,26 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// Function to fetch and display GitHub repos
+function fetchGitHubRepos() {
+    fetch('/cgi-bin/info.py/api/github/repos')
+        .then(response => response.json())
+        .then(repos => {
+            const reposContainer = document.getElementById('repos-container');
+            repos.forEach(repo => {
+                const repoElement = document.createElement('div');
+                repoElement.className = 'repo-item';
+                repoElement.innerHTML = `
+                    <h3><a href="${repo.url}" target="_blank">${repo.name}</a></h3>
+                    <p>${repo.description || 'No description'}</p>
+                    <p>Stars: ${repo.stars}, Language: ${repo.language || 'Not specified'}</p>
+                `;
+                reposContainer.appendChild(repoElement);
+            });
+        })
+        .catch(error => console.error('Error fetching GitHub repos:', error));
+}
+
+// Call the function when the page loads
+document.addEventListener('DOMContentLoaded', fetchGitHubRepos);
