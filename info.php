@@ -1,7 +1,7 @@
 <?php
+header('Content-Type: application/json');
 require_once('../config.php');
 
-// Function to fetch GitHub repos
 function getGitHubRepos() {
     $username = GITHUB_USERNAME;
     $url = "https://api.github.com/users/$username/repos";
@@ -9,13 +9,29 @@ function getGitHubRepos() {
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_USERAGENT, 'PHP Script');
+    
     $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
     
-    return json_decode($response, true);
+    if ($httpCode != 200) {
+        return ['error' => 'Failed to fetch repositories'];
+    }
+    
+    $repos = json_decode($response, true);
+    
+    $simplifiedRepos = array_map(function($repo) {
+        return [
+            'name' => $repo['name'],
+            'url' => $repo['html_url'],
+            'description' => $repo['description'],
+            'stars' => $repo['stargazers_count'],
+            'language' => $repo['language']
+        ];
+    }, $repos);
+    
+    return $simplifiedRepos;
 }
 
-// Fetch and return repos as JSON
-header('Content-Type: application/json');
 echo json_encode(getGitHubRepos());
-?>

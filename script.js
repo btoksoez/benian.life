@@ -110,9 +110,9 @@ function fetchGitHubRepos() {
                     const repoElement = document.createElement('div');
                     repoElement.className = 'repo-item';
                     repoElement.innerHTML = `
-                        <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+                        <h3><a href="${repo.url}" target="_blank">${repo.name}</a></h3>
                         <p>${repo.description || 'No description'}</p>
-                        <p>Stars: ${repo.stargazers_count}, Language: ${repo.language || 'Not specified'}</p>
+                        <p>Stars: ${repo.stars}, Language: ${repo.language || 'Not specified'}</p>
                     `;
                     reposContainer.appendChild(repoElement);
                 });
