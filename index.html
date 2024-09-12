@@ -15,10 +15,11 @@
 <body>
     <nav>
         <ul>
-            <li><a href="#experiences">Experiences</a></li>
+            <!-- <li><a href="#experiences">Experiences</a></li> -->
             <li><a href="#projects">Projects</a></li>
             <li><a href="#blog">Blog</a></li>
             <li><a href="https://github.com/btoksoez" target="_blank">GitHub</a></li>
+            <li><a class="cta" href="#footer">Get in touch</a></li>
         </ul>
     </nav>
     <header>
@@ -30,7 +31,7 @@
     </header>
 
     <main>
-        <section id="experiences">
+        <!-- <section id="experiences">
             <h2>Experiences</h2>
             <div class="timeline">
                 <div class="timeline-item">
@@ -108,56 +109,56 @@
                         </div>
                     </div>
                 </div>
-                <!-- Add more timeline-items for other experiences -->
             </div>
-        </section>
-        
+        </section> -->
+
         <section id="projects">
             <h2>Projects</h2>
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="coding">Coding</button>
                 <button class="filter-btn" data-filter="entrepreneurship">Entrepreneurship</button>
-                <button class="filter-btn" data-filter="Retreats">Retreats</button>
+                <button class="filter-btn" data-filter="retreats">Retreats</button>
             </div>
             <div class="project-grid">
+                <!-- add work with arun, onboarding automation for purposeflow, retreat, maaind, maybe abc -->
                 <div class="project-item" data-category="coding">
-                    <a href="https://github.com/btoksoez/traffic" target="_blank">
+                    <a href="https://github.com/btoksoez/nanoGPT" target="_blank">
                         <div class="project-preview">
-                            <img src="path/to/traffic-preview.jpg" alt="Traffic Project Preview">
+                            <img style="object-position: left" src="https://github.com/btoksoez/nanoGPT/raw/main/imgs/example.png" alt="nanoGPT Project Preview">
                         </div>
                         <div class="project-info">
-                            <h3>Traffic</h3>
-                            <p class="project-subtitle">Designing and training a Convolutional Neural Network to identify traffic signs from photographs.</p>
+                            <h3>nanoGPT</h3>
+                            <p class="project-subtitle">A decoder-only character-level transformer trained on Shakespeare.</p>
                         </div>
                     </a>
                 </div>
-                <div class="project-item" data-category="coding">
-                    <a href="https://github.com/btoksoez/CS50AI" target="_blank">
+                <div class="project-item" data-category="retreats">
+                    <a href="./projects/retreat.html"> <!-- Link to the retreat subpage -->
                         <div class="project-preview">
-                            <img src="path/to/cs50ai-preview.jpg" alt="CS50AI Project Preview">
+                            <img style="object-position: left" src="./images/retreat/image.png" alt="Retreat Project Preview">
                         </div>
                         <div class="project-info">
-                            <h3>CS50AI</h3>
-                            <p class="project-subtitle">My work of the CS50 AI with Python Course from Harvard.</p>
+                            <h3>Return to the Heart</h3>
+                            <p class="project-subtitle">Hosted a transformative retreat focused on emotional connection and presence.</p>
                         </div>
                     </a>
                 </div>
                 <div class="project-item" data-category="coding">
                     <a href="https://github.com/btoksoez/cub3d" target="_blank">
                         <div class="project-preview">
-                            <img src="path/to/cub3d-preview.jpg" alt="cub3d Project Preview">
+                            <img src="https://github.com/btoksoez/cub3d/blob/dev/videos/cub3d_bonus.gif?raw=true" alt="cub3d Project Preview">
                         </div>
                         <div class="project-info">
                             <h3>cub3d</h3>
-                            <p class="project-subtitle">A 3D game, using a raycasting engine, inspired by Wolfenstein 3D.</p>
+                            <p class="project-subtitle">A 3D game programmed in C, using a raycasting engine, inspired by Wolfenstein 3D.</p>
                         </div>
                     </a>
                 </div>
                 <div class="project-item" data-category="entrepreneurship">
-                    <a href="https://github.com/btoksoez/cub3d" target="_blank">
+                    <a href="./projects/mindtrospect.html">
                         <div class="project-preview">
-                            <img src="path/to/cub3d-preview.jpg" alt="cub3d Project Preview">
+                            <img src="./images/mindtrospect/sharinglink.jpg" alt="Mindtrospect Preview">
                         </div>
                         <div class="project-info">
                             <h3>Mindtrospect</h3>
@@ -166,53 +167,20 @@
                     </a>
                 </div>
                 <div class="project-item" data-category="coding">
-                    <a href="https://github.com/btoksoez/docker" target="_blank">
+                    <a href="https://github.com/btoksoez/makemore" target="_blank">
                         <div class="project-preview">
-                            <img src="path/to/docker-preview.jpg" alt="Docker Project Preview">
+                            <img style="object-position: left" src="https://github.com/btoksoez/makemore/blob/main/imgs/final.png?raw=true" alt="makemore Project Preview">
                         </div>
                         <div class="project-info">
-                            <h3>Docker</h3>
-                            <p class="project-subtitle">A docker script to run valgrind on Mac</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-item" data-category="coding">
-                    <a href="https://github.com/btoksoez/get_next_line" target="_blank">
-                        <div class="project-preview">
-                            <img src="path/to/get_next_line-preview.jpg" alt="get_next_line Project Preview">
-                        </div>
-                        <div class="project-info">
-                            <h3>get_next_line</h3>
-                            <p class="project-subtitle">A function that reads a line from a file descriptor</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-item" data-category="coding">
-                    <a href="https://github.com/btoksoez/ft_printf" target="_blank">
-                        <div class="project-preview">
-                            <img src="path/to/ft_printf-preview.jpg" alt="ft_printf Project Preview">
-                        </div>
-                        <div class="project-info">
-                            <h3>ft_printf</h3>
-                            <p class="project-subtitle">My own printf function</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="project-item" data-category="coding">
-                    <a href="https://github.com/btoksoez/libft" target="_blank">
-                        <div class="project-preview">
-                            <img src="path/to/libft-preview.jpg" alt="libft Project Preview">
-                        </div>
-                        <div class="project-info">
-                            <h3>libft</h3>
-                            <p class="project-subtitle">My own standard C library</p>
+                            <h3>Makemore</h3>
+                            <p class="project-subtitle">Recoding torch.nn from scratch:<br>A (bad) Autoregressive Character-Level Language Model that predicts new words</p>
                         </div>
                     </a>
                 </div>
                 <div class="project-item" data-category="coding">
                     <a href="https://github.com/btoksoez/minishell" target="_blank">
                         <div class="project-preview">
-                            <img src="path/to/minishell-preview.jpg" alt="minishell Project Preview">
+                            <img src="https://github.com/btoksoez/minishell/raw/main/minishell.png" alt="minishell Project Preview">
                         </div>
                         <div class="project-info">
                             <h3>minishell</h3>
@@ -221,20 +189,20 @@
                     </a>
                 </div>
                 <div class="project-item" data-category="coding">
-                    <a href="https://github.com/btoksoez/pipex" target="_blank">
+                    <a href="https://github.com/btoksoez/micrograd" target="_blank">
                         <div class="project-preview">
-                            <img src="path/to/pipex-preview.jpg" alt="pipex Project Preview">
+                            <img src="https://github.com/karpathy/micrograd/raw/master/puppy.jpg" alt="micrograd Project Preview">
                         </div>
                         <div class="project-info">
-                            <h3>pipex</h3>
-                            <p class="project-subtitle">This project is about handling pipes, forks and file descriptors in C</p>
+                            <h3>Micrograd</h3>
+                            <p class="project-subtitle">A manual implementation of torch.backward()</p>
                         </div>
                     </a>
                 </div>
                 <div class="project-item" data-category="coding">
                     <a href="https://github.com/btoksoez/fractol" target="_blank">
                         <div class="project-preview">
-                            <img src="path/to/fractol-preview.jpg" alt="fractol Project Preview">
+                            <img src="https://camo.githubusercontent.com/0bff0108f7cc40e2c1eb92e44822c3f794e1d58637a03f5c28975478fd8bac10/68747470733a2f2f697465726e616c2e75732f77702d636f6e74656e742f75706c6f6164732f323032302f30332f4672616374616c2d416c6f652d4c65617665732e6a7067" alt="fractol Project Preview">
                         </div>
                         <div class="project-info">
                             <h3>fractol</h3>
@@ -243,30 +211,31 @@
                     </a>
                 </div>
                 <div class="project-item" data-category="coding">
-                    <a href="https://github.com/btoksoez/philosophers" target="_blank">
+                    <a href="https://github.com/btoksoez/traffic" target="_blank">
                         <div class="project-preview">
-                            <img src="path/to/philosophers-preview.jpg" alt="philosophers Project Preview">
+                            <img src="https://github.com/btoksoez/traffic/blob/main/imgs/traffic.jpg?raw=true" alt="Traffic Project Preview">
                         </div>
                         <div class="project-info">
-                            <h3>philosophers</h3>
-                            <p class="project-subtitle">The "Philosophers" project at 42 involves simulating the classic dining philosophers problem, using threads and mutexes to make them eat, sleep and think.</p>
+                            <h3>Traffic</h3>
+                            <p class="project-subtitle">Designing and training a Convolutional Neural Network to identify traffic signs from photographs.</p>
                         </div>
                     </a>
                 </div>
                 <div class="project-item" data-category="coding">
-                    <a href="https://github.com/btoksoez/push_swap" target="_blank">
+                    <a href="https://github.com/btoksoez/philosophers" target="_blank">
                         <div class="project-preview">
-                            <img src="path/to/push_swap-preview.jpg" alt="push_swap Project Preview">
+                            <img src="https://github.com/btoksoez/philosophers/raw/main/philosophers.jpg" alt="philosophers Project Preview">
                         </div>
                         <div class="project-info">
-                            <h3>push_swap</h3>
-                            <p class="project-subtitle">A sorting algorithm that requires optimizing a series of stack operations to sort data with the fewest possible actions.</p>
+                            <h3>philosophers</h3>
+                            <p class="project-subtitle">Simulating the classic dining philosophers problem, using threads and mutexes to make them eat, sleep and think.</p>
                         </div>
                     </a>
                 </div>
+
             </div>
         </section>
-        
+
         <section id="blog">
             <h2>Blog</h2>
             <div class="blog-grid" id="blogGrid">
@@ -317,36 +286,28 @@
                 </article>
             </div>
             <button class="viewAllBtn">View All</button>
-        </section>
         <!-- <section id="github-repos">
             <h2>My GitHub Repositories</h2>
             <div id="repos-container"></div>
         </section> -->
     </main>
-
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="contact">
+                <h3>Contact</h3>
+                <a href="mailto:btoksoez@gmail.com" target="_blank">btoksoez@gmail.com</a>
+            </div>
+            <div class="social-links">
+                <h3>Connect</h3>
+                <a href="https://linkedin.com/in/benian" target="_blank">LinkedIn</a>
+                <a href="https://instagram.com/3enian" target="_blank">Instagram</a>
+                <a href="https://github.com/btoksoez" target="_blank">GitHub</a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>2024 Benian. All rights reserved.</p>
+        </div>
+    </footer>
     <script src="script.js"></script>
 </body>
-<footer>
-    <div class="footer-content">
-        <div class="contact">
-            <h3>Contact</h3>
-            <a href="mailto:btoksoez@gmail.com" target="_blank">btoksoez@gmail.com</a>
-        </div>
-        <div class="social-links">
-            <h3>Connect</h3>
-            <a href="https://linkedin.com/in/benian" target="_blank">LinkedIn</a>
-            <a href="https://instagram.com/3enian" target="_blank">Instagram</a>
-            <a href="https://github.com/btoksoez" target="_blank">GitHub</a>
-        </div>
-        <div class="quick-links">
-            <h3>Quick Links</h3>
-            <a href="#experiences">Experiences</a>
-            <a href="#projects">Projects</a>
-            <a href="#blog">Blog</a>
-        </div>
-    </div>
-    <div class="copyright">
-        <p>2024 Benian. All rights reserved.</p>
-    </div>
-</footer>
 </html>

@@ -24,12 +24,27 @@
     padding: 0;
 }
 
+.skills > ul > li {
+    font-weight: bold; /* Make main items bold */
+    margin: 10px 0; /* Space between main items */
+}
+
+.skills ul ul {
+    list-style-type: disc; /* Use disc bullets for sub-items */
+    padding-left: 20px; /* Indent sub-bullets */
+    margin: 5px 0; /* Space between sub-items */
+}
+
+.skills ul ul li {
+    font-weight: normal; /* Normal weight for sub-items */
+}
+
 body {
     font-family: 'Recoleta', sans-serif;
     background-color: var(--beige-white);
     color: var(--dark-brown);
     margin: 0;
-    padding: 0;
+    padding: 20px;
     line-height: 1.6;
     letter-spacing: 0.5px; /* Added letter spacing */
 }
@@ -59,9 +74,41 @@ header h1 {
     margin-bottom: 20px;
 }
 
+
 h2 {
     font-size: 3rem;
     text-align: center;
+}
+
+.content {
+    max-width: 1000px;
+    margin: auto;
+    padding: 20px 40px; /* Add padding to the sides */
+}
+
+
+.images {
+    display: grid;
+    margin-top: 40px;
+    grid-template-columns: repeat(4, 1fr); /* Responsive grid */
+    gap: 15px; /* Space between images */
+    margin-bottom: 60px;
+}
+
+.images img {
+    width: 100%; /* Make images responsive */
+    object-fit: cover; /* Maintain aspect ratio */
+    border-radius: 15px;
+}
+
+.images img.large {
+    grid-column: span 2; /* Medium images take one column */
+    grid-row: span 2; /* Adjust row span if needed */
+}
+
+.images img.small {
+    grid-column: span 1; /* Small images take one column */
+    grid-row: span 1; /* Adjust row span if needed */
 }
 
 .subtitle {
@@ -97,6 +144,7 @@ nav {
     color: var(--dark-brown);
     padding: 1rem 0;
     position: fixed;
+    justify-content: space-between; /* Space between items */
     top: 0;
     left: 0;
     right: 0;
@@ -126,6 +174,44 @@ nav ul li a:hover {
     color: var(--light-brown); /* Optional: slightly lighter brown on hover */
 }
 
+nav ul li a.cta {
+    background: none;
+    padding: 4px 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 100px;
+    background-color: var(--dark-brown);
+    color: var(--beige-white);
+}
+
+nav ul li a.cta:hover {
+    background-color: var(--light-brown); /* Change background on hover */
+    color: var(--beige-white);
+}
+
+@media (max-width: 768px) {
+    nav {
+        padding: 0.75rem 0; /* Reduce padding for mobile */
+    }
+    nav ul {
+        flex-direction: row; /* Keep items in a row */
+        justify-content: center; /* Center items */
+    }
+
+    nav ul li {
+        margin: 0 5px; /* Reduce space between items */
+    }
+
+    nav ul li a {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+        padding: 2px 8px; /* Smaller padding for links */
+    }
+
+    nav ul li a.cta {
+        padding: 2px 8px; /* Smaller padding for CTA */
+    }
+}
+
 main {
     padding-top: 60px; /* Adjust based on navbar height */
     max-width: 1200px;
@@ -144,17 +230,13 @@ h1, h2, h3, h4, h5, h6 {
 footer {
     background-color: #000000;
     color: #ffffff;
-    padding: 20px 0;
+    padding: 40px 0;
     margin-top: 40px;
-}
-
-.spaceholder {
-    min-height: 5rem;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
     max-width: 1200px;
@@ -509,7 +591,7 @@ footer {
 
 @media (max-width: 768px) {
     header h1 {
-        font-size: 5rem; /* Reduce font size on smaller screens */
+        font-size: 8vw; /* Reduce font size on smaller screens */
         max-width: 90%; /* Limit width to 90% of the container */
         margin: 0 auto; /* Center the text */
         word-wrap: break-word; /* Allow long words to break and wrap */
@@ -528,8 +610,8 @@ footer {
 
 @media (max-width: 480px) {
     header h1 {
-        font-size: 4rem; /* Further reduce font size on very small screens */
-        max-width: 90%; /* Limit width to 90% of the container */
+        font-size: 8vw; /* Further reduce font size on very small screens */
+        max-width: 100%; /* Limit width to 90% of the container */
     }
 
     header .subtitle {
@@ -542,4 +624,31 @@ footer {
     color: inherit;
     display: block;
     height: 100%;
+}
+
+.testimonial-slider {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.testimonial-test {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.slider {
+    position: relative;
+    overflow: hidden; /* Hide overflow */
+    max-width: 600px; /* Limit width */
+    margin: 0 auto; /* Center the slider */
+}
+
+.slide {
+    display: none; /* Hide all slides by default */
+    flex-direction: column; /* Stack image and text */
+    align-items: center; /* Center items */
+}
+
+.slide.active {
+    display: flex; /* Show active slide */
 }
