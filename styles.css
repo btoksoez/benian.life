@@ -127,6 +127,13 @@ h2 {
     margin-top: 20px;
 }
 
+.video-container {
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically (if needed) */
+    margin: 20px; /* Optional: add some margin */
+}
+
 @keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
         transform: translateX(-50%) translateY(0);
@@ -287,6 +294,10 @@ footer {
     }
 }
 
+.spaceholder {
+    height: 50px;
+}
+
 /* Timeline styles */
 .timeline {
     position: relative;
@@ -388,7 +399,7 @@ footer {
 
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(2, 400px);
+    grid-template-columns: repeat(3, 400px);
     gap: 2rem;
     justify-content: center;
     margin: 0 auto;
@@ -411,15 +422,23 @@ footer {
     padding: 0 20px;
 }
 
-@media (max-width: 768px) {
+/* Responsive adjustments */
+@media (max-width: 1300px) {
     .project-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 400px); /* 2 columns for medium screens */
+    }
+}
+
+@media (max-width: 850px) {
+    .project-grid {
+        grid-template-columns: repeat(1, 400px); /* 1 column for small screens */
         gap: 1rem;
         padding: 0 20px;
     }
 
     .project-item {
-        max-width: 100%;
+        max-width: 80%;
+        margin: 0 auto;
     }
 }
 
@@ -455,6 +474,7 @@ footer {
 
 .project-info h3 {
     font-size: 1.5rem;
+    text-align: center;
     color: var(--dark-brown);
 }
 
@@ -474,13 +494,14 @@ footer {
     display: flex;
     justify-content: center;
     margin-bottom: 20px;
+    flex-wrap: wrap;
 }
 
 .filter-btn {
     background: none;
     border: 2px solid var(--dark-brown);
     padding: 8px 16px;
-    margin: 0 5px;
+    margin: 0 5px 10px 5px;
     cursor: pointer;
     transition: all 0.3s ease;
     border-radius: 100px;
