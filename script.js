@@ -17,15 +17,15 @@ function isElementInViewport(el) {
 function animateTimeline() {
     const experiencesSectionRect = experiencesSection.getBoundingClientRect();
     const timelineRect = timeline.getBoundingClientRect();
-    
+
     let lineHeight;
-    
+
     if (experiencesSectionRect.top <= 0) {
         lineHeight = Math.min(timelineRect.bottom - timelineRect.top, window.innerHeight - experiencesSectionRect.top);
     } else {
         lineHeight = Math.max(0, window.innerHeight - experiencesSectionRect.top);
     }
-    
+
     timelineLine.style.height = `${lineHeight}px`;
 
     timelineItems.forEach((item, index) => {
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
     filterButtons.forEach(button => {
         button.addEventListener('click', () => {
             const filter = button.dataset.filter;
-            
+
             filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
 
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     viewAllBtn.addEventListener('click', function() {
         hiddenPosts.forEach(post => post.classList.toggle('hidden'));
-        
+
         if (viewAllBtn.textContent === 'View All') {
             viewAllBtn.textContent = 'Show Less';
         } else {
