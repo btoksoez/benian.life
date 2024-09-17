@@ -24,20 +24,6 @@
     padding: 0;
 }
 
-.skills > ul > li {
-    font-weight: bold; /* Make main items bold */
-    margin: 10px 0; /* Space between main items */
-}
-
-.skills ul ul {
-    list-style-type: disc; /* Use disc bullets for sub-items */
-    padding-left: 20px; /* Indent sub-bullets */
-    margin: 5px 0; /* Space between sub-items */
-}
-
-.skills ul ul li {
-    font-weight: normal; /* Normal weight for sub-items */
-}
 
 body {
     font-family: 'Recoleta', sans-serif;
@@ -76,8 +62,9 @@ header h1 {
 
 
 h2 {
-    font-size: 3rem;
+    font-size: 2.5rem;
     text-align: center;
+    margin-top: 50px;
 }
 
 .content {
@@ -98,6 +85,7 @@ h2 {
 .images img {
     width: 100%; /* Make images responsive */
     object-fit: cover; /* Maintain aspect ratio */
+    aspect-ratio: 1 / 1;
     border-radius: 15px;
 }
 
@@ -297,7 +285,6 @@ footer {
 .spaceholder {
     height: 50px;
 }
-
 /* Timeline styles */
 .timeline {
     position: relative;
@@ -351,12 +338,23 @@ footer {
     color: #FF9F55;
 }
 
+.timeline-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
 .timeline-image {
     width: 50px;
     height: 50px;
     object-fit: cover;
     border-radius: 50%;
     margin-right: 15px;
+}
+
+.timeline-title {
+    font-size: 1.5rem;
+    color: var(--beige-white);
 }
 
 .experience-details {
@@ -655,6 +653,14 @@ footer {
 .testimonial-test {
     font-size: 1.5rem;
     font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-align: center;
+}
+
+.testimonial-subtitle {
+    font-size: 1rem;
+    text-align: center;
 }
 
 .slider {
@@ -672,4 +678,57 @@ footer {
 
 .slide.active {
     display: flex; /* Show active slide */
+}
+
+
+.impact {
+    display: grid;
+    grid-template-columns: 1fr; /* Single-column layout for smaller screens */
+    gap: 20px; /* Space between sections */
+}
+
+@media (min-width: 768px) {
+    .impact {
+        grid-template-columns: 1fr 1fr; /* Two-column layout for larger screens */
+    }
+}
+
+.impact > div {
+    background-color: #f9f9f9; /* Light background for each impact item */
+    padding: 15px;
+    border-radius: 8px; /* Rounded corners */
+    position: relative;
+}
+
+.impact h3 {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.impact ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.impact ul li {
+    position: relative;
+    padding-left: 30px; /* Add more padding to create space between checkmark and text */
+    margin: 8px 0;
+}
+
+.impact ul li::before {
+    content: "✔️"; /* Custom icon */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2em;
+    margin-right: 10px; /* Space between checkmark and text */
+}
+
+
+.impact div:hover {
+    background-color: var(--light-brown); /* Highlight on hover */
+    color: var(--beige-white);
 }
