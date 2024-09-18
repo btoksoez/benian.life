@@ -82,6 +82,14 @@ h2 {
     margin-bottom: 60px;
 }
 
+.images-coaching {
+    display: grid;
+    margin-top: 40px;
+    grid-template-columns: repeat(2, 1fr); /* Responsive grid */
+    gap: 15px; /* Space between images */
+    margin-bottom: 60px;
+}
+
 .images img {
     width: 100%; /* Make images responsive */
     object-fit: cover; /* Maintain aspect ratio */
