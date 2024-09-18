@@ -157,27 +157,55 @@ document.addEventListener('DOMContentLoaded', function() {
 
 let currentIndex = 0;
 const slides = document.querySelectorAll('.slide');
+const leftArrow = document.querySelector('.left-arrow');
+const rightArrow = document.querySelector('.right-arrow');
 
 function showSlide(index) {
     slides.forEach((slide, i) => {
-        slide.classList.remove('active', 'previous', 'next'); // Remove all classes
+        slide.classList.remove('active');
         if (i === index) {
-            slide.classList.add('active'); // Show the current slide
-        } else if (i === (index - 1 + slides.length) % slides.length) {
-            slide.classList.add('previous'); // Previous slide
-        } else if (i === (index + 1) % slides.length) {
-            slide.classList.add('next'); // Next slide
+            slide.classList.add('active');
         }
     });
 }
 
 function nextSlide() {
-    currentIndex = (currentIndex + 1) % slides.length; // Loop back to the first slide
+    currentIndex = (currentIndex + 1) % slides.length;
     showSlide(currentIndex);
 }
+
+function prevSlide() {
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+    showSlide(currentIndex);
+}
+
+leftArrow.addEventListener('click', prevSlide);
+rightArrow.addEventListener('click', nextSlide);
 
 // Show the first slide initially
 showSlide(currentIndex);
 
 // Change slide every 5 seconds
 setInterval(nextSlide, 5000);
+
+// Swiping functionality
+let startX;
+
+document.querySelector('.slider').addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+});
+
+document.querySelector('.slider').addEventListener('touchmove', (e) => {
+    if (!startX) return;
+
+    let endX = e.touches[0].clientX;
+    let diffX = startX - endX;
+
+    if (diffX > 50) {
+        nextSlide();
+        startX = null;
+    } else if (diffX < -50) {
+        prevSlide();
+        startX = null;
+    }
+});

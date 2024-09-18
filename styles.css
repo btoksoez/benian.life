@@ -668,16 +668,41 @@ footer {
     overflow: hidden; /* Hide overflow */
     max-width: 600px; /* Limit width */
     margin: 0 auto; /* Center the slider */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slide {
     display: none; /* Hide all slides by default */
     flex-direction: column; /* Stack image and text */
     align-items: center; /* Center items */
+    max-width: 80%;
+
 }
 
 .slide.active {
     display: flex; /* Show active slide */
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    border: none;
+    padding: 1rem;
+    cursor: pointer;
+    background-color: transparent;
+    z-index: 10;
+}
+
+.left-arrow {
+    left: 0px;
+}
+
+.right-arrow {
+    right: 0px;
 }
 
 
